@@ -1,0 +1,110 @@
+<!-- 
+    Developed by: Jayson Kenn Julian
+    Purpose: RealPage FrontEnd Examination
+    Note: I had fun doing this, I know I'm not the best candidate but I am eager to learn more and do wonderful websites/applications.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/build/breakpoint.css">
+    <link rel="stylesheet" href="/build/tailwind.css">
+    <script type="text/javascript" src="app.js"></script>
+    <title>JKPJULIAN</title>
+</head>
+<body class="font-sans" onload="imgCreate()">
+    <!-- Navigation -->
+    <nav class="absolute z-30 bg-white h-20 md:h-24 w-full flex flex-row items-center justify-between border-b-2 border-gray-300 md:pl-10 pl-6 pr-6">
+        <div class="flex justify-start">
+            <img src="img/leaselabs_logo_fullstack_rgb.png" class="lg:h-16 md:h-12 h-auto w-auto" alt="Company Logo">
+        </div>
+        <div class="flex flex-row flex-wrap items-center justify-center md:space-x-20 lg:visible invisible pro:hidden">
+            <a href="#" class="uppercase text-md text-gray-700 hover:text-[#00a7e0] focus:outline-none">home</a>
+            <a href="#" class="uppercase text-md text-gray-700 hover:text-[#00a7e0] focus:outline-none">our work</a>
+            <a href="#" class="uppercase text-md text-gray-700 hover:text-[#00a7e0] focus:outline-none">about us</a>
+            <a href="#" class="uppercase text-md text-gray-700 hover:text-[#00a7e0] focus:outline-none">contact us</a>
+            <div class="bg-[#00a7e0] h-24 flex items-center justify-center transform -skew-x-12">
+                <a href="#" class="uppercase text-md text-white hover:text-xl px-9 focus:outline-none">specials</a>
+            </div>
+        </div>
+        <div class="md:space-x-20 lg:hidden block pro:block pro:pr-10">
+            <button type="button" class="text-gray-700 text-xl focus:text-[#00a7e0] active:hover:text-[#00a7e0] focus:outline-none" onclick="toggleElem('sm_navi')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <nav id="sm_navi" class="hidden absolute z-50 inset-0 p-2 h-full w-full">
+        <div class="bg-white h-auto w-auto flex flex-col items-center justify-start rounded-xl border border-gray-500 shadow-xl p-6">
+            <div class="flex flex-row items-center justify-between w-full">
+                <img src="img/leaselabs_logo_fullstack_rgb.png" class="h-8 w-auto" alt="Company Logo">
+                <button type="button" class="text-gray-700 text-xl focus:text-[#00a7e0] active:hover:text-[#00a7e0] focus:outline-none" onclick="toggleElem('sm_navi')">
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center w-full mt-2 p-2 space-y-2 border-t-2 border-b-2 border-gray-300 border-dashed">
+                <a href="#" class="uppercase text-sm text-gray-700 focus:text-[#00a7e0] active:text-[#00a7e0] focus:outline-none">home</a>
+                <a href="#" class="uppercase text-sm text-gray-700 focus:text-[#00a7e0] active:text-[#00a7e0] focus:outline-none">our work</a>
+                <a href="#" class="uppercase text-sm text-gray-700 focus:text-[#00a7e0] active:text-[#00a7e0] focus:outline-none">about us</a>
+                <a href="#" class="uppercase text-sm text-gray-700 focus:text-[#00a7e0] active:text-[#00a7e0] focus:outline-none">contact us</a>
+                <a href="#" class="uppercase text-sm text-[#00a7e0] focus:font-extrabold active:font-extrabold focus:outline-none">specials</a>
+            </div>
+            <div class="flex flex-col items-center justify-center w-full p-2 space-y-2 border-b-2 border-gray-300 border-dashed">
+                <button type="button" class="w-full uppercase text-sm text-gray-700 bg-gray-300 py-1 rounded-lg text-center focus:bg-[#00a7e0] focus:text-white shadow-md" onclick="toggleElem('subnav')">subnav</button>
+                <div id="subnav" class="hidden">
+                    <ul class="list-disc list-outside text-xs text-[#00a7e0]">
+                        <li><a href="" class="text-gray-700">Link 1</a></li>
+                        <li><a href="" class="text-gray-700">Link 2</a></li>
+                        <li><a href="" class="text-gray-700">Link 3</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="w-full uppercase text-sm text-gray-700 bg-gray-300 py-1 rounded-lg text-center focus:bg-[#00a7e0] focus:text-white shadow-md" onclick="toggleElem('relatedlinks')">related links</button>
+                <div id="relatedlinks" class="hidden">
+                    <ul class="list-disc list-outside text-xs text-[#00a7e0]">
+                        <li><a href="" class="text-gray-700">Link 1</a></li>
+                        <li><a href="" class="text-gray-700">Link 2</a></li>
+                        <li><a href="" class="text-gray-700">Link 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="relative w-screen md:h-screen h-full z-0 md:py-24 py-20 md:overflow-hidden">
+        <div class="flex flex-col md:flex-row items-start justify-start h-full w-full p-6 lg:p-10">
+            <div class="md:w-1/5 w-full h-auto flex flex-col items-start justify-start space-y-2 lg:block hidden pro:hidden">
+                <div class="w-full uppercase text-md text-gray-700 bg-gray-300 py-1 rounded-lg text-center focus:bg-[#00a7e0] focus:text-white shadow-md">subnav</div>
+                <ul class="list-disc list-inside text-sm text-[#00a7e0] px-2">
+                    <li><a href="" class="text-gray-700">Link 1</a></li>
+                    <li><a href="" class="text-gray-700">Link 2</a></li>
+                    <li><a href="" class="text-gray-700">Link 3</a></li>
+                </ul>
+                <div class="w-full uppercase text-md text-gray-700 bg-gray-300 py-1 rounded-lg text-center focus:bg-[#00a7e0] focus:text-white shadow-md">related links</div>
+                <ul class="list-disc list-inside text-sm text-[#00a7e0] px-2">
+                    <li><a href="" class="text-gray-700">Link 1</a></li>
+                    <li><a href="" class="text-gray-700">Link 2</a></li>
+                    <li><a href="" class="text-gray-700">Link 3</a></li>
+                </ul>
+            </div>
+            <div class="lg:w-4/5 pro:w-auto w-auto h-auto flex flex-col items-center justify-center md:items-start md:justify-start border-l-2 border-r-2 border-b-8 border-gray-200 pro:ml-0 lg:ml-10 md:px-10 md:pb-6 px-2">
+                <div class="h-full w-full flex flex-col items-start justify-start">
+                    <h1 class="text-2xl uppercase text-[#00a7e0] font-bold">heading 1</h1>
+                    <h2 class="text-lg capitalized text-gray-700 italic font-semibold pl-2">heading 2</h2>
+                    <div class="text-sm text-justify space-y-2 my-6 md:my-8">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus interdum rhoncus. Curabitur dictum est sit amet turpis auctor facilisis. Phasellus nec suscipit mi. In eget egestas risus. Aliquam erat volutpat. Duis euismod scelerisque orci, nec imperdiet lacus laoreet ac. Integer auctor massa tristique neque tincidunt blandit vel in augue.
+                        <br><br>
+                        Morbi vel diam vel arcu tincidunt rhoncus eget id mi. Vivamus sit amet semper nunc. Sed eget massa nec nulla lobortis vulputate sed id felis. Aenean finibus mattis lorem, eget laoreet orci ornare quis. Praesent ac mattis purus, ut porttitor tortor. Cras et condimentum velit. 
+                        <br><br>
+                        Donec viverra sem eu sapien feugiat accumsan. Vivamus ullamcorper augue tempor sem dapibus pulvinar. Pellentesque ac nunc euismod, lobortis eros vitae, bibendum ex. Aliquam vitae justo turpis. Praesent ex orci, ullamcorper et eros in, euismod gravida tellus. Nullam sed sapien dictum, eleifend mauris et, placerat odio. Aliquam quis sapien nisl.                       
+                    </div>
+                </div>
+                <div id="imgcontent" class="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-6 h-full w-full items-center justify-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
